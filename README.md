@@ -634,9 +634,19 @@ La résolution a également un impact sur la bande passante requise pour transme
 
 ### Profondeur de couleur
 
-La profondeur de couleur, également appelée bit depth, représente le nombre de bits utilisés pour décrire la couleur d'un pixel, généralement noté $b$. Une profondeur de couleur plus élevée permet de représenter un plus grand nombre de couleurs $C = 2^b$, rendant les transitions entre les couleurs plus douces et permettant des images plus réalistes.
+La profondeur de couleur, également appelée bit depth, représente le nombre de bits utilisés pour décrire la couleur d'un pixel, généralement noté
+```math
+$b$
+```
+. 
+Une profondeur de couleur plus élevée permet de représenter un plus grand nombre de couleurs 
+```math
+$C = 2^b$
+```
+, rendant les transitions entre les couleurs plus douces et permettant des images plus réalistes.
 
-Supposons que nous utilisions un espace de couleur RVB. La profondeur de couleur est divisée également entre les composantes rouge, verte et bleue, chacune ayant ```math
+Supposons que nous utilisions un espace de couleur RVB. La profondeur de couleur est divisée également entre les composantes rouge, verte et bleue, chacune ayant 
+```math
 $b_\text{RGB} = \frac{b}{3}$
 ```
 bits. Alors, le nombre de valeurs possibles pour chaque composante est 
