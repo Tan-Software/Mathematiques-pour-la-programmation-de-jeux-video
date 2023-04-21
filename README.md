@@ -427,7 +427,8 @@ $\theta$
 est l'angle de vue, $w$ et $h$ sont les largeur et hauteur de l'écran, 
 ```math 
 $n$ 
-``` et 
+``` 
+et 
 ```math 
 $f$
 ``` 
