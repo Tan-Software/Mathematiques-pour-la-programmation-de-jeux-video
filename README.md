@@ -327,7 +327,7 @@ $x$
 , par rapport à sa position d'origine, en fonction de sa coordonnée sur l'axe des 
 ```math
 $y$
-```.
+```
 
 En 3D, le cisaillement peut être représenté par une matrice de transformation homogène 4x4 de la forme :
 ```math
