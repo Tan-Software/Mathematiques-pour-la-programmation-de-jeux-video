@@ -916,14 +916,16 @@ est le vecteur normal à la surface de contact.
 
 Ensuite, les vitesses des objets après la collision sont mises à jour en fonction de l'impulsion appliquée :
 ```math
-$v_{A_{t+1}} = v_{A_t} + \frac{J}{m_A} \times n$
-
-$v_{B_{t+1}} = v_{B_t} - \frac{J}{m_B} \times n$
+$v_{A_{t+1}} = v_{A_t} + \frac{J}{m_A} \times n
+```
+```math
+$v_{B_{t+1}} = v_{B_t} - \frac{J}{m_B} \times n
 ```
 La position des objets peut également être corrigée pour éviter les chevauchements en déplaçant les objets en fonction de la profondeur de pénétration et d'un facteur de correction :
 ```math
 $p_{A_{t+1}} = p_{A_t} - \frac{1}{m_A} \times \frac{m_A + m_B}{m_A \times m_B} \times P \times n$
-
+```
+```math
 $p_{B_{t+1}} = p_{B_t} + \frac{1}{m_B} \times \frac{m_A + m_B}{m_A \times m_B} \times P \times n$
 ```
 où 
