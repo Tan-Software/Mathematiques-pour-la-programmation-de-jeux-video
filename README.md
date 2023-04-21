@@ -335,7 +335,8 @@ $\begin{pmatrix} 1 & a_{xy} & a_{xz} & 0 \\ a_{yx} & 1 & a_{yz} & 0 \\ a_{zx} & 
 ```
 
 où 
-```math$a_{xy}$, $a_{xz}$, $a_{yx}$, $a_{yz}$, $a_{zx}$ et $a_{zy}$
+```math
+$a_{xy}$, $a_{xz}$, $a_{yx}$, $a_{yz}$, $a_{zx}$ et $a_{zy}$
 ```
 sont les coefficients de cisaillement pour chaque paire d'axes respectifs.
 
@@ -346,7 +347,8 @@ $\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}$
 en ajoutant une quantité de déplacement proportionnelle à la coordonnée $y$ (en 2D) ou aux paires de coordonnées 
 ```math
 $x$ et $y$, $y$ et $z$, $x$ et $z$
-``` (en 3D), multipliées par les coefficients de cisaillement correspondants. 
+``` 
+(en 3D), multipliées par les coefficients de cisaillement correspondants. 
 
 La multiplication de la matrice de transformation homogène par le vecteur de position homogène produit un nouveau vecteur de position homogène :
 
