@@ -1,6 +1,6 @@
 # [Tansoftware](https://www.tansoftware.com) - Mathématiques pour la programmation de jeux vidéo [![fr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png)](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png)  [^1]
 
-> /!\ En cours de réalisation /!\
+> /!\ En cours de réalisation : Des descriptions plus étoffées et détaillées, ainsi que des visuels, seront ajoutés prochainement. /!\
 
 ## Table des matières
 
