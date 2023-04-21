@@ -274,13 +274,25 @@ En 2D, l'homothétie peut être représentée par une matrice de transformation 
 $\begin{pmatrix} s & 0 & 0 \\ 0 & s & 0 \\ 0 & 0 & 1 \end{pmatrix}$
 ```
 
-où $s$ est le facteur d'échelle. Si $s$ est supérieur à 1, l'homothétie agrandit l'objet, tandis que s'il est inférieur à 1, elle le réduit. Si $s$ est négatif, l'homothétie inverse l'objet.
+où $s$ est le facteur d'échelle. Si 
+```math
+$s$
+```
+est supérieur à 1, l'homothétie agrandit l'objet, tandis que s'il est inférieur à 1, elle le réduit. Si 
+```math
+$s$
+```
+est négatif, l'homothétie inverse l'objet.
 
 En 3D, l'homothétie peut être représentée par une matrice de transformation homogène 4x4 de la forme :
 ```math
 $\begin{pmatrix} s & 0 & 0 & 0 \\ 0 & s & 0 & 0 \\ 0 & 0 & s & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$
 ```
-où $s$ est le facteur d'échelle.
+où 
+```math
+$s$
+```
+est le facteur d'échelle.
 
 Ces matrices peuvent être utilisées pour appliquer une homothétie à un vecteur de position homogène 
 ```math
@@ -607,7 +619,8 @@ $W \times H$
 La résolution a des implications importantes sur la quantité de données requises pour stocker une image. Pour une image fixe avec une profondeur de couleur constante 
 ```math
 $b$
-```, le nombre total de bits requis pour stocker une image est donné par :
+```
+, le nombre total de bits requis pour stocker une image est donné par :
 ```math
 $N_\text{bits} = W \times H \times b$
 ```
@@ -620,7 +633,8 @@ La résolution a également un impact sur la bande passante requise pour transme
 
 La profondeur de couleur, également appelée bit depth, représente le nombre de bits utilisés pour décrire la couleur d'un pixel, généralement noté $b$. Une profondeur de couleur plus élevée permet de représenter un plus grand nombre de couleurs $C = 2^b$, rendant les transitions entre les couleurs plus douces et permettant des images plus réalistes.
 
-Supposons que nous utilisions un espace de couleur RVB. La profondeur de couleur est divisée également entre les composantes rouge, verte et bleue, chacune ayant ```math$b_\text{RGB} = \frac{b}{3}$
+Supposons que nous utilisions un espace de couleur RVB. La profondeur de couleur est divisée également entre les composantes rouge, verte et bleue, chacune ayant ```math
+$b_\text{RGB} = \frac{b}{3}$
 ```
 bits. Alors, le nombre de valeurs possibles pour chaque composante est 
 ```math
