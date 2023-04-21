@@ -752,7 +752,10 @@ Les ombres sont des zones où la lumière est bloquée par un objet. Elles ajout
 
 #### Texture et coordonnées de texture
 
-Les textures sont des images 2D appliquées sur des objets 3D pour donner l'illusion de détails tels que les couleurs, les motifs ou les reliefs. Les textures peuvent être utilisées pour représenter la couleur de base d'un objet, sa brillance, sa rugosité, sa transparence, etc. Les coordonnées de texture, également appelées coordonnées UV, déterminent la manière dont une texture est mappée sur un objet 3D.
+Les textures sont des images 2D appliquées sur des objets 3D pour donner l'illusion de détails tels que les couleurs, les motifs ou les reliefs. 
+Elles peuvent être utilisées pour représenter la couleur de base d'un objet, sa brillance, sa rugosité, sa transparence, etc. 
+
+Les coordonnées de texture, également appelées coordonnées UV, déterminent la manière dont une texture est mappée sur un objet 3D.
 
 Pour appliquer une texture à un objet 3D, on attribue à chaque sommet de l'objet un ensemble de coordonnées UV, qui correspondent aux coordonnées (u, v) dans l'image de texture. Les coordonnées UV varient généralement de 0 à 1, où (0, 0) correspond au coin inférieur gauche de l'image de texture et (1, 1) au coin supérieur droit.
 
@@ -773,11 +776,12 @@ Il existe plusieurs techniques de mappage UV, dont certaines sont :
 [🔝 Retour en haut de page](#table-des-matières)
 
 ### Animation
-L'animation en infographie consiste à créer l'illusion de mouvement ou de changement d'un objet ou d'une scène 3D au fil du temps. Il existe plusieurs techniques d'animation, certaines des plus courantes étant l'animation par squelette, l'animation de forme et la cinématique inverse.
+L'animation en infographie consiste à créer l'illusion de mouvement ou de changement d'un objet ou d'une scène 3D au fil du temps. 
+Les plus courantes étant l'animation par squelette, l'animation de forme et la cinématique inverse.
 
 ### Animation par squelette
 
-L'animation par squelette, également appelée animation par armature, consiste à définir une structure osseuse (ou armature) pour un objet 3D et à manipuler cette structure pour créer des mouvements.
+L'animation par squelette (Rigging), également appelée animation par armature, consiste à définir une structure osseuse (ou armature) pour un objet 3D et à manipuler cette structure pour créer des mouvements.
 
  Chaque os de l'armature est associé à une partie de l'objet 3D et déforme cette partie lorsqu'il est déplacé ou orienté. L'animation par squelette est largement utilisée pour animer des personnages et des créatures dans les jeux vidéo et les films d'animation.
 
