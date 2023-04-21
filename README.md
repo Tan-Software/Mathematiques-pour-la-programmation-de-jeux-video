@@ -71,7 +71,7 @@
 
 Ce dépôt est conçu pour vous fournir une compréhension approfondie des concepts mathématiques et des techniques utilisées dans la programmation de jeux 3D et les graphiques informatiques.
 
-Nous allons couvrir une variété de sujets allant des bases des mathématiques aux transformations géométriques, en passant par l'éclairage et la couleur, les projections et le rendu 3D, les techniques d'optimisation et la physique et la simulation.
+Nous allons couvrir une variété de sujets allant des bases des mathématiques aux transformations géométriques, en passant par l'éclairage et la couleur, les projections et le rendu 3D, les techniques d'optimisation et la physique, ainsi que la simulation.
 
 Vous apprendrez comment appliquer les concepts mathématiques pour résoudre des problèmes liés à la géométrie, aux transformations, à l'éclairage et au rendu, ainsi qu'à la gestion des performances et de la physique du jeu.
 
