@@ -139,8 +139,8 @@ La magnitude d'un vecteur en dimension $n$ est donnée par la formule suivante :
 ```
 
 > Le symbole $\sum$ est appelé "somme" en mathématiques. Il indique que l'on doit additionner les termes indiqués. Dans ce cas, on doit additionner les carrés de chaque composante du vecteur $\mathbf{v}$.
-> Pour être plus explicite, le symbole du haut (le *n*), représente le nombre total de termes à sommer, et le *i=1* en dessous de la somme indique la valeur de l'indice de départ de la sommation.
-> Dit autrement, la somme commence par le premier élément de la liste. Le i=i+1 indique que l'on ajoute un à l'indice à chaque itération de la somme.
+> Pour être plus explicite, e symbole en haut ($n$) indique le nombre total de termes à sommer, et le $i=1$ en dessous de la somme indique la valeur de l'indice de départ de la sommation.   
+> Cela signifie que la somme commence par le premier élément de la liste, et que $i$ est incrémenté de 1 à chaque itération de la somme, jusqu'à ce que $i$ atteigne la valeur de $n$.
 >
 > Le symbole $\left\Vert\mathbf{v}\right\Vert$ représente la magnitude (ou norme) du vecteur $\mathbf{v}$, c'est-à-dire sa longueur ou sa taille.
 >
@@ -149,10 +149,17 @@ La magnitude d'un vecteur en dimension $n$ est donnée par la formule suivante :
 > Le symbole $v_i$ représente la $i$-ème composante du vecteur $\mathbf{v}$. On élève cette composante au carré en utilisant le symbole $^2$.
 >
 > Enfin, la racine carrée $\sqrt{\ }$ est appliquée à la somme des carrés des composantes pour obtenir la magnitude du vecteur $\mathbf{v}$.
+> $\sqrt{}" permettant d'annuler l'opération de carré qui a été appliquée aux composantes du vecteur. 
+> L'opération de carré permet de supprimer les signes négatifs des valeurs absolues des composantes et de rendre toutes les valeurs positives, tout en gardant leur contribution proportionnelle à leur magnitude
 
 Pour un vecteur 2D représenté par les coordonnées $(x,y)$, la magnitude est donnée par :
 
-$|v| = \sqrt{x^2 + y^2}$
+```math
+\left\Vert\mathbf{v}\right\Vert = \sqrt{\sum_{i=1}^{2} v_i^2} = \sqrt{v_1^2 + v_2^2}
+```
+
+En effet, dans un espace 2D, $n=2$, dans un espace 3D $n=3$, etc. 
+La magnitude d'un vecteur 2D est donc  égale à la racine carrée de la somme des carrés de ses deux composantes, ou, dit autrement, comme la longueur de l'hypoténuse d'un triangle rectangle dont les côtés adjacents sont les composantes x et y du vecteur.
 
 #### Une représentation possible en C# serait la suivante
 ```C#
@@ -171,6 +178,11 @@ public class Game : GameEngine
 ```
 
 > Ici, la classe Game instancierait une position qui serait un vecteur de dimension 3 et serait affectée au joueur, avec une position en x (1.0f), y (2.0f), z (3.0f).
+
+La magnitude serait donc
+```math
+||\mathbf{v}|| = \sqrt{\sum_{i=1}^{3} v_i^2} = \sqrt{1.0^2 + 2.0^2 + 3.0^2} \approx 3.74
+```
 
 L'avantage d'utiliser des vecteurs, plutôt que des nombres concrets, tient aux propriétés mathématiques associées, qui permettent une représentation plus flexible et une manipulation aisée des quantités géométriques dans les jeux vidéo et d'autres applications. 
 
