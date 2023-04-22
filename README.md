@@ -875,7 +875,7 @@ Le rendu avancé dans les jeux vidéo englobe un large éventail de techniques p
 
 [🔝 Retour en haut de page](#table-des-matières)
 
-
+___
 ## Rendu graphique
 
 #### Pipeline de rendu
@@ -890,7 +890,7 @@ C --> D(Calcul des ombres et de l'éclairage)
 D --> E(Rendu des textures et effets spéciaux)
 E --> F(Image 2D)
 ```
-### 11.1 Culling et occlusion
+### Culling et occlusion
 
 Le culling et l'occlusion sont des techniques utilisées pour optimiser le rendu graphique en éliminant les objets ou les parties d'objets qui ne sont pas visibles à l'écran. Le culling se concentre sur l'élimination des objets entiers qui sont en dehors du champ de vision de la caméra, tandis que l'occlusion élimine les parties d'objets qui sont cachées derrière d'autres objets.
 
@@ -899,12 +899,19 @@ graph LR
 A(Culling) -- Élimine les objets hors champ --> B(Optimisation du rendu)
 C(Occlusion) -- Élimine les parties d'objets cachées --> B
 ```
-
+___
 ### Shaders
 
-Les shaders sont des programmes qui sont exécutés sur les unités de traitement graphique (GPU) pour déterminer les caractéristiques visuelles des objets affichés à l'écran. Les shaders permettent de créer des effets spéciaux, tels que les réflexions, les ombres et les animations de texture. Ils sont généralement écrits dans des langages de programmation spécifiques au GPU, tels que GLSL (OpenGL Shading Language) ou HLSL (High-Level Shading Language).
+Les shaders sont des programmes qui sont exécutés sur les unités de traitement graphique (GPU) pour déterminer les caractéristiques visuelles des objets affichés à l'écran.
 
-Il existe différents types de shaders, notamment les vertex shaders, les geometry shaders et les fragment shaders. Les vertex shaders sont appliqués aux sommets des objets 3D, les geometry shaders sont utilisés pour créer ou modifier la géométrie des objets, et les fragment shaders déterminent les couleurs et les textures des pixels affichés à l'écran.
+Généralement écrits dans des langages de programmation spécifiques au GPU, tels que GLSL (OpenGL Shading Language) ou HLSL (High-Level Shading Language), ils permettent de créer des effets spéciaux, tels que les réflexions, les ombres et les animations de texture.
+
+Exemple : "un effet de brouillard", ou le shader pourrait appliquer un effet de flou sur les pixels qui sont les plus éloignés.
+
+En somme, le but d'un shader est personnaliser de l'apparence visuelle des objets à l'écran.
+Nous allons ici aborder les vertex shaders, geometry shaders et les fragment shaders. 
+
+### Processus de rendu
 
 ```mermaid
 graph TD
@@ -913,6 +920,46 @@ C(Geometry shaders) --> B
 D(Fragment shaders) --> B
 B --> E(Effets spéciaux)
 ```
+
+### Vertex Shaders
+Les [vertex](https://github.com/tanguychenier/Terminal_3DEngine) shaders sont des programmes exécutés sur chaque sommet des objets lors de leur rendu et sont utilisés pour transformer les positions des sommets, en appliquant des transformations linéaires sur les coordonnées des sommets.
+
+> Les objets 3D sont généralement définis par un ensemble de sommets, qui sont reliés entre eux par des arêtes pour former des polygones, tels que des triangles ou des quadrilatères. 
+>
+> Les vertex shaders sont appliqués à chaque sommet de ces polygones lors du rendu, pour déterminer la position finale de chaque sommet dans l'image affichée à l'écran.
+
+#### Fonctionnement
+
+Chaque sommet est représenté par un vecteur de position homogène $\mathbf{v}_h$, qui peut être transformé en un nouveau vecteur de position homogène $\mathbf{v}'h$ par l'application d'une matrice de transformation homogène $M{VS}$, qui représente le vertex shader :
+
+```math
+\mathbf{v}'_h = M_{VS} \mathbf{v}_h
+```
+
+La matrice de transformation $M_{VS}$ peut être construite en combinant plusieurs types de transformations linéaires, telles que la translation, la rotation et la mise à l'échelle. Ces transformations peuvent être représentées par des matrices de transformation homogène 4x4.
+
+Par exemple, pour effectuer une translation de vecteur $\mathbf{t} = (t_x, t_y, t_z)$, on peut construire la matrice de translation homogène $T$ :
+
+```math
+T = \begin{pmatrix} 1 & 0 & 0 & t_x \\ 0 & 1 & 0 & t_y \\ 0 & 0 & 1 & t_z \\ 0 & 0 & 0 & 1 \end{pmatrix}
+```
+
+On peut ensuite combiner plusieurs transformations en multipliant les matrices correspondantes. Par exemple, pour effectuer une translation suivie d'une rotation autour de l'axe des $y$ de l'angle $\theta$, on peut construire la matrice de transformation $M_{VS}$ correspondante en multipliant les matrices de translation et de rotation :
+
+```math
+M_{VS} = R_y(\theta) T
+```
+où $R_y(\theta)$ est la matrice de rotation homogène autour de l'axe des $y$ de l'angle $\theta$.
+
+### Rendu
+```mermaid
+graph LR
+A(Texture d'entrée) --> B(Shader)
+B --> C(Cible de rendu)
+C --> D(Texture de sortie)
+```
+
+Bien que les détails de ces opérations dépendent du langage de programmation utilisé pour écrire les shaders, tel que GLSL ou HLSL, ils peuvent également effectuer d'autres opérations sur les sommets, telles que l'application de textures, la génération de coordonnées de texture, ou l'envoi de données supplémentaires aux shaders de géométrie et de fragment.
 
 [🔝 Retour en haut de page](#table-des-matières)
 
