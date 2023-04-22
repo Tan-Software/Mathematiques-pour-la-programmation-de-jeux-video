@@ -103,7 +103,7 @@ A --> D(z)
 
 ```
 
-Fondamentales dans le domaine des jeux vidéo, en particulier pour les jeux en 3 dimensons, elles permettent de représenter et de manipuler les positions, les mouvements et les orientations des objets dans l'espace virtuel.
+Fondamentales dans le domaine des jeux vidéo, en particulier pour les jeux en 3 dimensions, elles permettent de représenter et de manipuler les positions, les mouvements et les orientations des objets dans l'espace virtuel.
 ___
 ### Vecteurs
 
@@ -144,11 +144,11 @@ public class Game : GameEngine
 }
 ```
 
-Ici, la classe Game, instancierait une position étant un vecteur de dimension 3, et serait affecté à Player, cette position en x (1.0f), y (2.0f), z (3.0f).
+*Ici, la classe Game, instancierait une position étant un vecteur de dimension 3, et serait affecté à Player, cette position en x (1.0f), y (2.0f), z (3.0f).*
 
 L'avantage d'utiliser des vecteurs, plutôt que des nombres concrets, tient aux propriétés mathématiques associées, qui permettent une représentation plus flexible et une manipulation aisée des quantités géométriques dans les jeux vidéo et d'autres applications. 
 
-En outre,  les opérations vectorielles standard, telles que l'addition, la soustraction et la multiplication par un scalaire, simplifient les calculs et les transformations géométriques requises dans de nombreux scénarios. 
+En outre, les opérations vectorielles standard, telles que l'addition, la soustraction et la multiplication par un scalaire, simplifient les calculs et les transformations géométriques requises dans de nombreux scénarios. 
 
 #### Addition et soustraction de vecteurs
 
@@ -185,7 +185,6 @@ Les matrices sont des tableaux rectangulaires de nombres, utilisées pour effect
 Elles sont couramment utilisées pour représenter des transformations géométriques telles que la translation, la rotation, la mise à l'échelle, ..., que nous verrons par la suite.
 
 Une matrice est généralement représentée sous la forme d'un tableau avec M lignes et N colonnes. Les éléments d'une matrice sont généralement représentés en utilisant des lettres majuscules, telles que A, B, C, etc.
-
 
 Les opérations courantes sur les matrices incluent l'addition, la soustraction, la multiplication par un scalaire et la multiplication de matrices.
 
@@ -224,33 +223,33 @@ Plusieurs types d'opérations s'appliquent dessus, tels que
 La translation est une transformation qui déplace un objet d'une position à une autre sans changer sa forme ou son orientation. En 3D, elle peut être représentée par une matrice de transformation homogène 4x4 de la forme :
 
 ```math
-$\begin{pmatrix} 1 & 0 & 0 & t_x \\ 0 & 1 & 0 & t_y \\ 0 & 0 & 1 & t_z \\ 0 & 0 & 0 & 1 \end{pmatrix}$
+\begin{pmatrix} 1 & 0 & 0 & t_x \\ 0 & 1 & 0 & t_y \\ 0 & 0 & 1 & t_z \\ 0 & 0 & 0 & 1 \end{pmatrix}
 ```
 
 où $t_x$, $t_y$ et $t_z$ sont les quantités de mouvement dans chaque direction. 
 
 Cette matrice peut être utilisée pour déplacer un vecteur de position homogène 
 ```math
-$\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}$ 
+\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}
 ```
 d'une quantité de mouvement spécifique dans chaque direction. 
 
 La multiplication de la matrice de translation homogène par le vecteur de position homogène produit un nouveau vecteur de position homogène :
 
 ```math
-$\mathbf{v}'_h = \begin{pmatrix} 1 & 0 & 0 & t_x \\ 0 & 1 & 0 & t_y \\ 0 & 0 & 1 & t_z \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix} = \begin{pmatrix} x + t_x \\ y + t_y \\ z + t_z \\ 1 \end{pmatrix}$
+\mathbf{v}'_h = \begin{pmatrix} 1 & 0 & 0 & t_x \\ 0 & 1 & 0 & t_y \\ 0 & 0 & 1 & t_z \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix} = \begin{pmatrix} x + t_x \\ y + t_y \\ z + t_z \\ 1 \end{pmatrix}
 ```
 
 #### Rotation
 La rotation en 3D est une transformation qui fait tourner un objet autour d'un point ou d'un axe donné, sans changer sa position ou sa taille. En 3D, elle peut être représentée par une matrice de transformation homogène 4x4 de la forme :
 
 ```math
-$\begin{pmatrix} r_{11} & r_{12} & r_{13} & 0 \\ r_{21} & r_{22} & r_{23} & 0 \\ r_{31} & r_{32} & r_{33} & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$
+\begin{pmatrix} r_{11} & r_{12} & r_{13} & 0 \\ r_{21} & r_{22} & r_{23} & 0 \\ r_{31} & r_{32} & r_{33} & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
 ```
 
 où 
 ```math
-$r_{11}$, $r_{12}$, $r_{13}$, $r_{21}$, $r_{22}$, $r_{23}$, $r_{31}$, $r_{32}$ et $r_{33}$
+r_{11}, r_{12}, r_{13}, r_{21}, r_{22}, r_{23}, r_{31}, r_{32} et r_{33}
 ```
 sont les coefficients de la matrice de rotation. 
 
@@ -258,14 +257,14 @@ Ces coefficients peuvent être calculés à partir des angles de rotation autour
 
 Cette matrice peut être utilisée pour faire tourner un vecteur de position homogène 
 ```math
-$\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}$
+\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}
 ```
 autour d'un point ou d'un axe de rotation donné. 
 
 La multiplication de la matrice de rotation homogène par le vecteur de position homogène produit un nouveau vecteur de position homogène :
 
 ```math
-$\mathbf{v}'_h = \begin{pmatrix} r_{11} & r_{12} & r_{13} & 0 \\ r_{21} & r_{22} & r_{23} & 0 \\ r_{31} & r_{32} & r_{33} & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix} = \begin{pmatrix} r_{11} x + r_{12} y + r_{13} z \\ r_{21} x + r_{22} y + r_{23} z \\ r_{31} x + r_{32} y + r_{33} z \\ 1 \end{pmatrix}$
+\mathbf{v}'_h = \begin{pmatrix} r_{11} & r_{12} & r_{13} & 0 \\ r_{21} & r_{22} & r_{23} & 0 \\ r_{31} & r_{32} & r_{33} & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix} = \begin{pmatrix} r_{11} x + r_{12} y + r_{13} z \\ r_{21} x + r_{22} y + r_{23} z \\ r_{31} x + r_{32} y + r_{33} z \\ 1 \end{pmatrix}
 ```
 
 
@@ -275,7 +274,7 @@ La mise à l'échelle est une transformation qui agrandit ou rétrécit un objet
 En 2D, elle peut être représentée par une matrice de transformation homogène 3x3 de la forme :
 
 ```math
-$\begin{pmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{pmatrix}$
+\begin{pmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{pmatrix}
 ```
 
 où $s_x$ et $s_y$ sont les facteurs de mise à l'échelle selon les axes X et Y respectivement. 
@@ -285,14 +284,14 @@ Si $s_x$ et $s_y$ sont supérieurs à 1, la mise à l'échelle agrandit l'objet,
 En 3D, la mise à l'échelle peut être représentée par une matrice de transformation homogène 4x4 de la forme :
 
 ```math
-$\begin{pmatrix} s_x & 0 & 0 & 0 \\ 0 & s_y & 0 & 0 \\ 0 & 0 & s_z & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$
+\begin{pmatrix} s_x & 0 & 0 & 0 \\ 0 & s_y & 0 & 0 \\ 0 & 0 & s_z & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
 ```
 
 où $s_x$, $s_y$ et $s_z$ sont les facteurs de mise à l'échelle selon les axes X, Y et Z respectivement.
 
 Ces matrices peuvent être utilisées pour mettre à l'échelle un vecteur de position homogène 
 ```math
-$\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}$ 
+\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}
 ```
 selon les facteurs de mise à l'échelle donnés. 
 
@@ -300,13 +299,14 @@ La multiplication de la matrice de mise à l'échelle homogène par le vecteur d
 
 En 2D :
 ```math
-$\mathbf{v}'_h = \begin{pmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ 1 \end{pmatrix} = \begin{pmatrix} s_x x \\ s_y y \\ 1 \end{pmatrix}$
+\mathbf{v}'_h = \begin{pmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ 1 \end{pmatrix} = \begin{pmatrix} s_x x \\ s_y y \\ 1 \end{pmatrix}
 ```
 En 3D :
 ```math
-$\mathbf{v}'_h = \begin{pmatrix} s_x & 0 & 0 & 0 \\ 0 & s_y & 0 & 0 \\ 0 & 0 & s_z & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix} = \begin{pmatrix} s_x x \\ s_y y \\ s_z z \\ 1 \end{pmatrix}$
+\mathbf{v}'_h = \begin{pmatrix} s_x & 0 & 0 & 0 \\ 0 & s_y & 0 & 0 \\ 0 & 0 & s_z & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix} = \begin{pmatrix} s_x x \\ s_y y \\ s_z z \\ 1 \end{pmatrix}
 ```
 
+___
 #### L'homothétie
 L'homothétie est une transformation qui consiste à agrandir ou réduire un objet en multipliant toutes les distances entre ses points par un facteur d'échelle. 
 
@@ -314,42 +314,30 @@ Elle est similaire à la mise à l'échelle, mais ne maintient pas la position r
 
 En 2D, l'homothétie peut être représentée par une matrice de transformation homogène 3x3 de la forme :
 ```math
-$\begin{pmatrix} s & 0 & 0 \\ 0 & s & 0 \\ 0 & 0 & 1 \end{pmatrix}$
+\begin{pmatrix} s & 0 & 0 \\ 0 & s & 0 \\ 0 & 0 & 1 \end{pmatrix}
 ```
 
-où $s$ est le facteur d'échelle. Si 
-```math
-$s$
-```
-est supérieur à 1, l'homothétie agrandit l'objet, tandis que s'il est inférieur à 1, elle le réduit. Si 
-```math
-$s$
-```
-est négatif, l'homothétie inverse l'objet.
+où $s$ est le facteur d'échelle. Si $s$ est supérieur à 1, l'homothétie agrandit l'objet, tandis que s'il est inférieur à 1, elle le réduit. Si $s$ est négatif, l'homothétie inverse l'objet.
 
 En 3D, l'homothétie peut être représentée par une matrice de transformation homogène 4x4 de la forme :
 ```math
-$\begin{pmatrix} s & 0 & 0 & 0 \\ 0 & s & 0 & 0 \\ 0 & 0 & s & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$
+\begin{pmatrix} s & 0 & 0 & 0 \\ 0 & s & 0 & 0 \\ 0 & 0 & s & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
 ```
-où 
-```math
-$s$
-```
-est le facteur d'échelle.
+où $s$ est le facteur d'échelle.
 
 Ces matrices peuvent être utilisées pour appliquer une homothétie à un vecteur de position homogène 
 ```math
-$\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}$
+\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}
 ```
 en multipliant les coordonnées $x$, $y$ et $z$ par le facteur d'échelle $s$. La multiplication de la matrice de transformation homogène par le vecteur de position homogène produit un nouveau vecteur de position homogène :
 
 En 2D :
 ```math
-$\mathbf{v}'_h = \begin{pmatrix} s & 0 & 0 \\ 0 & s & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ 1 \end{pmatrix} = \begin{pmatrix} s x \\ s y \\ 1 \end{pmatrix}$
+\mathbf{v}'_h = \begin{pmatrix} s & 0 & 0 \\ 0 & s & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ 1 \end{pmatrix} = \begin{pmatrix} s x \\ s y \\ 1 \end{pmatrix}
 ```
 En 3D :
 ```math
-$\mathbf{v}'_h = \begin{pmatrix} s & 0 & 0 & 0 \\ 0 & s & 0 & 0 \\ 0 & 0 & s & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix} = \begin{pmatrix} s x \\ s y \\ s z \\ 1 \end{pmatrix}$
+\mathbf{v}'_h = \begin{pmatrix} s & 0 & 0 & 0 \\ 0 & s & 0 & 0 \\ 0 & 0 & s & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix} = \begin{pmatrix} s x \\ s y \\ s z \\ 1 \end{pmatrix}
 ```
 
 #### Le cisaillement
@@ -357,51 +345,32 @@ Le cisaillement est une transformation géométrique qui déforme un objet en le
 
 En 2D, le cisaillement peut être représenté par une matrice de transformation homogène 3x3 de la forme :
 ```math
-$\begin{pmatrix} 1 & a & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}$
+\begin{pmatrix} 1 & a & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}
 ```
-où $a$ est le coefficient de cisaillement. Le coefficient 
-```math
-$a$
-```
-détermine la quantité de déplacement du vecteur dans la direction de l'axe des 
-```math
-$x$
-```
-, par rapport à sa position d'origine, en fonction de sa coordonnée sur l'axe des 
-```math
-$y$
-```
+où $a$ est le coefficient de cisaillement. Le coefficient $a$ détermine la quantité de déplacement du vecteur dans la direction de l'axe des $x$, par rapport à sa position d'origine, en fonction de sa coordonnée sur l'axe des $y$.
 
 En 3D, le cisaillement peut être représenté par une matrice de transformation homogène 4x4 de la forme :
 ```math
-$\begin{pmatrix} 1 & a_{xy} & a_{xz} & 0 \\ a_{yx} & 1 & a_{yz} & 0 \\ a_{zx} & a_{zy} & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$
+\begin{pmatrix} 1 & a_{xy} & a_{xz} & 0 \\ a_{yx} & 1 & a_{yz} & 0 \\ a_{zx} & a_{zy} & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
 ```
 
-où 
-```math
-$a_{xy}$, $a_{xz}$, $a_{yx}$, $a_{yz}$, $a_{zx}$ et $a_{zy}$
-```
-sont les coefficients de cisaillement pour chaque paire d'axes respectifs.
+où $a_{xy}$, $a_{xz}$, $a_{yx}$, $a_{yz}$, $a_{zx}$ et $a_{zy}$ sont les coefficients de cisaillement pour chaque paire d'axes respectifs.
 
 Ces matrices peuvent être utilisées pour appliquer un cisaillement à un vecteur de position homogène 
 ```math
-$\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}$
+\mathbf{v}_h = \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}
 ```
-en ajoutant une quantité de déplacement proportionnelle à la coordonnée $y$ (en 2D) ou aux paires de coordonnées 
-```math
-$x$ et $y$, $y$ et $z$, $x$ et $z$
-``` 
-(en 3D), multipliées par les coefficients de cisaillement correspondants. 
+en ajoutant une quantité de déplacement proportionnelle à la coordonnée $y$ (en 2D) ou aux paires de coordonnées $x$ et $y$, $y$ et $z$, $x$ et $z$ (en 3D), multipliées par les coefficients de cisaillement correspondants. 
 
 La multiplication de la matrice de transformation homogène par le vecteur de position homogène produit un nouveau vecteur de position homogène :
 
 En 2D :
 ```math
-$\mathbf{v}'_h = \begin{pmatrix} 1 & a & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ 1 \end{pmatrix} = \begin{pmatrix} x + a y \\ y \\ 1 \end{pmatrix}$
+\mathbf{v}'_h = \begin{pmatrix} 1 & a & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ 1 \end{pmatrix} = \begin{pmatrix} x + a y \\ y \\ 1 \end{pmatrix}
 ```
 En 3D :
 ```math
-$\mathbf{v}'_h = \begin{pmatrix} 1 & a_{xy} & a_{xz} & 0 \\ a_{yx} & 1 & a_{yz} & 0 \\ a_{zx} & a_{zy} & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix} = \begin{pmatrix} x + a_{xy} y + a_{xz} z \\ y + a_{yx} x + a_{yz} z \\ z + a_{zx} x + a_{zy} y \\ 1 \end{pmatrix}$
+\mathbf{v}'_h = \begin{pmatrix} 1 & a_{xy} & a_{xz} & 0 \\ a_{yx} & 1 & a_{yz} & 0 \\ a_{zx} & a_{zy} & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix} = \begin{pmatrix} x + a_{xy} y + a_{xz} z \\ y + a_{yx} x + a_{yz} z \\ z + a_{zx} x + a_{zy} y \\ 1 \end{pmatrix}
 ```
 ### Géométrie linéaire
 La géométrie linéaire est la branche des mathématiques qui étudie les transformations géométriques dans l'espace en utilisant des outils algébriques tels que les matrices et les vecteurs. 
@@ -412,7 +381,7 @@ En informatique graphique, la géométrie linéaire est utilisée pour créer de
 
 La projection est une transformation qui est utilisée en informatique graphique pour projeter un objet en 3D sur un plan en 2D pour son affichage à l'écran. Elle peut être réalisée en utilisant la multiplication matricielle d'un vecteur de position homogène 
 ```math
-$\begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}$ 
+\begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}
 ```
 par une matrice de projection appropriée.
 
@@ -421,7 +390,7 @@ la projection orthographique et la projection perspective. La projection orthogr
 
 En 3D, la projection **orthographique** peut être représentée par une matrice de projection homogène 3x4 de la forme :
 ```math
-$\begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \ \end{pmatrix}$
+\begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \ \end{pmatrix}
 ```
 
 où la troisième colonne est remplacée par des zéros pour indiquer que la projection se fait sur un plan en 2D.
@@ -429,30 +398,10 @@ où la troisième colonne est remplacée par des zéros pour indiquer que la pro
 La projection **perspective** peut être représentée en 3D par une matrice de projection homogène 4x4 de la forme :
 
 ```math
-$\begin{pmatrix} \dfrac{1}{\tan\left(\dfrac{\theta}{2}\right)} & 0 & 0 & 0 \\ 0 & \dfrac{h}{w\cdot\tan\left(\dfrac{\theta}{2}\right)} & 0 & 0 \\ 0 & 0 & \dfrac{-(f+n)}{f-n} & \dfrac{-2fn}{f-n} \\ 0 & 0 & -1 & 0 \end{pmatrix}$
+\begin{pmatrix} \dfrac{1}{\tan\left(\dfrac{\theta}{2}\right)} & 0 & 0 & 0 \\ 0 & \dfrac{h}{w\cdot\tan\left(\dfrac{\theta}{2}\right)} & 0 & 0 \\ 0 & 0 & \dfrac{-(f+n)}{f-n} & \dfrac{-2fn}{f-n} \\ 0 & 0 & -1 & 0 \end{pmatrix}
 ```
 
-où 
-```math
-$\theta$
-```
-est l'angle de vue, 
-```math
-$w$
-```
-et 
-```math
-$h$
-```
-sont les largeur et hauteur de l'écran, 
-```math
-$n$
-```
-et 
-```math
-$f$
-```
-sont les distances du plan de coupe avant et arrière.
+où $\theta$ est l'angle de vue, $w$ et $h$ sont les largeur et hauteur de l'écran, $n$ et $f$ sont les distances du plan de coupe avant et arrière.
 
 
 #### Perspective
@@ -461,31 +410,14 @@ sont les distances du plan de coupe avant et arrière.
 
 La perspective est une transformation qui est utilisée en informatique graphique pour donner une impression de profondeur et de distance aux objets en 3D. Elle peut être représentée en 3D par une matrice de transformation homogène 4x4 de la forme :
 ```math
-$\begin{pmatrix} \dfrac{1}{\tan\left(\dfrac{\theta}{2}\right)} & 0 & 0 & 0 \\ 0 & \dfrac{h}{w\cdot\tan\left(\dfrac{\theta}{2}\right)} & 0 & 0 \\ 0 & 0 & \dfrac{-(f+n)}{f-n} & \dfrac{-2fn}{f-n} \\ 0 & 0 & -1 & 0 \end{pmatrix}$
+\begin{pmatrix} \dfrac{1}{\tan\left(\dfrac{\theta}{2}\right)} & 0 & 0 & 0 \\ 0 & \dfrac{h}{w\cdot\tan\left(\dfrac{\theta}{2}\right)} & 0 & 0 \\ 0 & 0 & \dfrac{-(f+n)}{f-n} & \dfrac{-2fn}{f-n} \\ 0 & 0 & -1 & 0 \end{pmatrix}
 ```
-où 
-```math
-$\theta$
-``` 
-est l'angle de vue, $w$ et $h$ sont les largeur et hauteur de l'écran, 
-```math 
-$n$ 
-``` 
-et 
-```math 
-$f$
-``` 
-sont les distances du plan de coupe avant et arrière.
-
-où 
-```math
-$d$
-```
-est la distance de l'observateur à l'origine du système de coordonnées.
+où $\theta$ est l'angle de vue, $w$ et $h$ sont les largeur et hauteur de l'écran, $n$ et $f$ sont les distances du plan de coupe avant et arrière.
+où $d$ est la distance de l'observateur à l'origine du système de coordonnées.
 
 Cette matrice peut être utilisée pour transformer un vecteur de position homogène 
 ```math
-$\begin{pmatrix} x \ y \ z \ 1 \end{pmatrix}$
+\begin{pmatrix} x \ y \ z \ 1 \end{pmatrix}
 ```
 en un nouveau vecteur de position homogène qui représente la position de l'objet vue depuis le point de vue de l'observateur, en appliquant une perspective qui diminue la taille des objets à mesure qu'ils s'éloignent de l'observateur.
 
@@ -495,21 +427,13 @@ La transformation de vue est une transformation qui est utilisée en informatiqu
 
 Elle peut être représentée en 3D par une matrice de transformation homogène 4x4 de la forme :
 ```math
-$\begin{pmatrix} R_{11} & R_{12} & R_{13} & -d_x \\ R_{21} & R_{22} & R_{23} & -d_y \\ R_{31} & R_{32} & R_{33} & -d_z \\ 0 & 0 & 0 & 1 \end{pmatrix}$
+\begin{pmatrix} R_{11} & R_{12} & R_{13} & -d_x \\ R_{21} & R_{22} & R_{23} & -d_y \\ R_{31} & R_{32} & R_{33} & -d_z \\ 0 & 0 & 0 & 1 \end{pmatrix}
 ```
-où 
-```math
-$d_x$, $d_y$ et $d_z$
-```
-sont les quantités de mouvement dans chaque direction, $R$ est une matrice de rotation qui représente la rotation de l'objet par rapport à l'observateur et 
-```math
-$d$
-```
-est la distance de l'observateur à l'origine du système de coordonnées.
+où $d_x$, $d_y$ et $d_z$ sont les quantités de mouvement dans chaque direction, $R$ est une matrice de rotation qui représente la rotation de l'objet par rapport à l'observateur et $d$ est la distance de l'observateur à l'origine du système de coordonnées.
 
 Ces matrices peuvent être utilisées pour transformer un vecteur de position homogène 
 ```math
-$\begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}$
+\begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}
 ```
 en un nouveau vecteur de position homogène qui représente la position de l'objet vue depuis le point de vue de l'observateur.
 
@@ -540,79 +464,27 @@ Chaque forme est représentée par un ensemble de points, de lignes et de courbe
 Les formes géométriques peuvent être de différentes sortes : des lignes droites, des courbes de Bézier, des cercles, des ellipses, des polygones, etc.
 
 #### Exemple
-Prenons  un cercle de rayon $r$ centré en 
-```math
-$(x_c, y_c)$
-```
-sur un plan cartésien. Sa représentation mathématique est donnée par l'équation suivante :
-```math
-$(x - x_c)^2 + (y - y_c)^2 = r^2$
-```
-Pour représenter ce cercle dans une image vectorielle, on utilise une équation paramétrique qui décrit chaque point 
-```math
-$(x,y)$
-```
-de la forme comme une fonction de son angle 
-```math
-$\theta$
-```
-```math
-$x = x_c + r \cos \theta$
+Prenons  un cercle de rayon $r$ centré en $(x_c, y_c)$ sur un plan cartésien. Sa représentation mathématique est donnée par l'équation suivante : $(x - x_c)^2 + (y - y_c)^2 = r^2$
 
-$y = y_c + r \sin \theta$
-```
+Pour représenter ce cercle dans une image vectorielle, on utilise une équation paramétrique qui décrit chaque point $(x,y)$
+de la forme comme une fonction de son angle $\theta$, $x = x_c + r \cos \theta$, $y = y_c + r \sin \theta$
 
 On peut ensuite relier ces points par des segments de ligne pour créer le cercle dans l'image vectorielle.
 
-Ainsi, reprenons l'exemple du cercle de rayon 3 centré en 
-```math
-$(2, 2)$
-```
-sur un plan cartésien. 
-L'équation mathématique de ce cercle est :
+Ainsi, reprenons l'exemple du cercle de rayon 3 centré en $(2, 2)$ sur un plan cartésien. 
+L'équation mathématique de ce cercle est $(x - 2)^2 + (y - 2)^2 = 9$.
 
-```math
-$(x - 2)^2 + (y - 2)^2 = 9$
-```
-Pour représenter ce cercle dans une image vectorielle, on peut utiliser une équation paramétrique qui décrit chaque point 
-```math
-$(x, y)$
-```
-de la forme :
+Pour représenter ce cercle dans une image vectorielle, on peut utiliser une équation paramétrique qui décrit chaque point $(x, y)$ de la forme :
 ```math
 $x = 2 + 3 \cos \theta$
 
 $y = 2 + 3 \sin \theta$
 ```
-> 
-```math
-$\cos$
-```
-et 
-```math
-$\sin$
-```
-de theta, sont utilisés ici dans le cas du cercle,  pour obtenir la valeur x et y correspondant à chaque angle 
-```math
-$\theta$
-```
-(theta) donné.
+> $\cos$ et $\sin$ de theta, sont utilisés ici dans le cas du cercle,  pour obtenir la valeur x et y correspondant à chaque angle $\theta$ (theta) donné.
 
-où 
-```math
-$\theta$
-```
-est l'angle par rapport à l'origine du cercle. 
+où $\theta$ est l'angle par rapport à l'origine du cercle. 
 
-Aussi, en prenant des valeurs différentes de 
-```math
-$\theta$
-```
-(par exemple 
-```math
-$\theta = 0, \pi/4, \pi/2, 3\pi/4, \pi, \ldots$
-```
-), on peut calculer les coordonnées correspondantes $(x,y)$ et relier ces points par des segments de ligne pour créer le cercle dans l'image vectorielle.
+Aussi, en prenant des valeurs différentes de $\theta$ (par exemple $\theta = 0, \pi/4, \pi/2, 3\pi/4, \pi, \ldots$), on peut calculer les coordonnées correspondantes $(x,y)$ et relier ces points par des segments de ligne pour créer le cercle dans l'image vectorielle.
 
 ### Bitmap
 Les graphiques bitmap, également appelés images matricielles, sont créés en utilisant une grille de pixels de différentes couleurs. 
@@ -624,7 +496,7 @@ Nous pouvons stocker cette image sous forme de matrice de pixels 4x4 où chaque 
 
 Par exemple, l'image suivante serait stockée sous forme de matrice de pixels :
 ```math
-$\begin{pmatrix}0 & 1 & 0 & 1 \\ 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & 1 & 0\end{pmatrix}$
+\begin{pmatrix}0 & 1 & 0 & 1 \\ 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & 1 & 0\end{pmatrix}
 ```
 #### Ce qui donnerait visuellement 
 ```mermaid
@@ -658,49 +530,20 @@ La résolution et la profondeur de couleur sont deux concepts étroitement liés
 
 La résolution d'une image est définie par le nombre de pixels qu'elle contient horizontalement et verticalement, généralement noté 
 ```math
-$W \times H$
+W \times H
 ```
 (par exemple, 800x600, signifiant 800 pixels de large pour 600 pixels de haut).
 
-La résolution a des implications importantes sur la quantité de données requises pour stocker une image. Pour une image fixe avec une profondeur de couleur constante 
-```math
-$b$
-```
-, le nombre total de bits requis pour stocker une image est donné par :
-```math
-$N_\text{bits} = W \times H \times b$
-```
-
-où $W$ est la largeur, $H$ est la hauteur et $b$ est la profondeur de couleur en bits.
+La résolution a des implications importantes sur la quantité de données requises pour stocker une image. Pour une image fixe avec une profondeur de couleur constante $b$, le nombre total de bits requis pour stocker une image est donné par : $N_\text{bits} = W \times H \times b$, où $W$ est la largeur, $H$ est la hauteur et $b$ est la profondeur de couleur en bits.
 
 La résolution a également un impact sur la bande passante requise pour transmettre des images en temps réel, comme c'est le cas dans les jeux vidéo. Une résolution plus élevée nécessite plus de bande passante pour transmettre les données de l'image.
 
 ### Profondeur de couleur
 
-La profondeur de couleur, également appelée bit depth, représente le nombre de bits utilisés pour décrire la couleur d'un pixel, généralement noté
-```math
-$b$
-```
-. 
-Une profondeur de couleur plus élevée permet de représenter un plus grand nombre de couleurs 
-```math
-$C = 2^b$
-```
-, rendant les transitions entre les couleurs plus douces et permettant des images plus réalistes.
+La profondeur de couleur, également appelée bit depth, représente le nombre de bits utilisés pour décrire la couleur d'un pixel, généralement noté $b$. 
+Une profondeur de couleur plus élevée permet de représenter un plus grand nombre de couleurs $C = 2^b$, rendant les transitions entre les couleurs plus douces et permettant des images plus réalistes.
 
-Supposons que nous utilisions un espace de couleur RVB. La profondeur de couleur est divisée également entre les composantes rouge, verte et bleue, chacune ayant 
-```math
-$b_\text{RGB} = \frac{b}{3}$
-```
-bits. Alors, le nombre de valeurs possibles pour chaque composante est 
-```math
-$2^{b_\text{RGB}}$
-```
-. Par conséquent, le nombre total de couleurs différentes pouvant être représentées est :
-
-```math
-$C = (2^{b_\text{RGB}})^3 = 2^b$
-```
+Supposons que nous utilisions un espace de couleur RVB. La profondeur de couleur est divisée également entre les composantes rouge, verte et bleue, chacune ayant $b_\text{RGB} = \frac{b}{3}$ bits. Alors, le nombre de valeurs possibles pour chaque composante est $2^{b_\text{RGB}}$. Par conséquent, le nombre total de couleurs différentes pouvant être représentées est : $C = (2^{b_\text{RGB}})^3 = 2^b$.
 
 La profondeur de couleur a également des implications importantes sur la quantité de données requises pour stocker une image, comme mentionné précédemment dans la section sur la résolution.
 
@@ -860,49 +703,16 @@ La physique des jeux est un élément clé pour créer des environnements intera
 
 ### Simulation physique
 
-La simulation physique implique le calcul des mouvements et des forces qui agissent sur les objets dans un monde virtuel. Les mouvements sont généralement basés sur les lois fondamentales de la mécanique classique, comme la loi de Newton :
+La simulation physique implique le calcul des mouvements et des forces qui agissent sur les objets dans un monde virtuel. Les mouvements sont généralement basés sur les lois fondamentales de la mécanique classique, comme la loi de Newton : $F = m \times a$ où $F$ est la force, $m$ est la masse de l'objet et $a$ est son accélération.
 
+Les forces peuvent inclure la gravité, les forces de contact, les forces de frottement et d'autres forces externes. L'accélération d'un objet est calculée en fonction de la somme des forces qui agissent sur lui : $a = \frac{\sum F}{m}$ Ensuite, la position et la vitesse de l'objet sont mises à jour en fonction de son accélération :
 ```math
-$F = m \times a$
+v_{t+1} = v_t + a \times \Delta t
 ```
-
-où 
 ```math
-$F$
+p_{t+1} = p_t + v_{t+1} \times \Delta t
 ```
-est la force, 
-```math
-$m$
-```
-est la masse de l'objet et 
-```math
-$a$
-```
-est son accélération.
-
-Les forces peuvent inclure la gravité, les forces de contact, les forces de frottement et d'autres forces externes. L'accélération d'un objet est calculée en fonction de la somme des forces qui agissent sur lui :
-```math
-$a = \frac{\sum F}{m}$
-```
-Ensuite, la position et la vitesse de l'objet sont mises à jour en fonction de son accélération :
-```math
-$v_{t+1} = v_t + a \times \Delta t$
-
-$p_{t+1} = p_t + v_{t+1} \times \Delta t$
-```
-où 
-```math
-$v_t$ et $p_t$
-```
-sont la vitesse et la position de l'objet à l'instant 
-```math
-$t$
-```
-, et 
-```math
-$\Delta t$
-```
-est le pas de temps de la simulation.
+où $v_t$ et $p_t$ sont la vitesse et la position de l'objet à l'instant $t$, et $\Delta t$ est le pas de temps de la simulation.
 
 ### Collision
 
@@ -928,58 +738,21 @@ La résolution de collision peut être basée sur des principes de mécanique cl
 La résolution de collision implique généralement l'application d'une force d'impulsion aux objets en collision pour les séparer :
 
 ```math
-$J = \frac{-(1 + e) \times (v_{A_t} - v_{B_t}) \cdot n}{\frac{1}{m_A} + \frac{1}{m_B}}$
+J = \frac{-(1 + e) \times (v_{A_t} - v_{B_t}) \cdot n}{\frac{1}{m_A} + \frac{1}{m_B}}
 ```
 
-où 
-```math
-$J$
-```
-est l'impulsion, $e$ est le coefficient de restitution (élasticité), 
-```math
-$v_{A_t}$
-```
-et 
-```math
-$v_{B_t}$
-```
-sont les vitesses des objets A et B avant la collision, 
-```math
-$m_A$
-```
-et 
-```math
-$m_B$
-```
-sont les masses des objets, et 
-```math
-$n$
-```
-est le vecteur normal à la surface de contact.
+où $J$ est l'impulsion, $e$ est le coefficient de restitution (élasticité), $v_{A_t}$ et $v_{B_t}$ sont les vitesses des objets A et B avant la collision, $m_A$ et $m_B$ sont les masses des objets, et $n$ est le vecteur normal à la surface de contact.
 
-Ensuite, les vitesses des objets après la collision sont mises à jour en fonction de l'impulsion appliquée :
-```math
-$v_{A_{t+1}} = v_{A_t} + \frac{J}{m_A} \times n
-```
-```math
-$v_{B_{t+1}} = v_{B_t} - \frac{J}{m_B} \times n
-```
+Ensuite, les vitesses des objets après la collision sont mises à jour en fonction de l'impulsion appliquée : $v_{A_{t+1}} = v_{A_t} + \frac{J}{m_A} \times n$ $v_{B_{t+1}} = v_{B_t} - \frac{J}{m_B} \times n$
+
 La position des objets peut également être corrigée pour éviter les chevauchements en déplaçant les objets en fonction de la profondeur de pénétration et d'un facteur de correction :
 ```math
-$p_{A_{t+1}} = p_{A_t} - \frac{1}{m_A} \times \frac{m_A + m_B}{m_A \times m_B} \times P \times n$
+p_{A_{t+1}} = p_{A_t} - \frac{1}{m_A} \times \frac{m_A + m_B}{m_A \times m_B} \times P \times n
 ```
 ```math
-$p_{B_{t+1}} = p_{B_t} + \frac{1}{m_B} \times \frac{m_A + m_B}{m_A \times m_B} \times P \times n$
+p_{B_{t+1}} = p_{B_t} + \frac{1}{m_B} \times \frac{m_A + m_B}{m_A \times m_B} \times P \times n
 ```
-où 
-```math
-$P$
-```
-est la profondeur de pénétration et 
-```math
-$n$
-```
-est le vecteur normal à la surface de contact.
+où $P$ est la profondeur de pénétration et $n$ est le vecteur normal à la surface de contact.
 
 ```mermaid
 graph LR
