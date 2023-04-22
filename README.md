@@ -144,7 +144,7 @@ public class Game : GameEngine
 }
 ```
 
-*Ici, la classe Game, instancierait une position étant un vecteur de dimension 3, et serait affecté à Player, cette position en x (1.0f), y (2.0f), z (3.0f).*
+> Ici, la classe Game instancierait une position qui serait un vecteur de dimension 3 et serait affectée au joueur, avec une position en x (1.0f), y (2.0f), z (3.0f).
 
 L'avantage d'utiliser des vecteurs, plutôt que des nombres concrets, tient aux propriétés mathématiques associées, qui permettent une représentation plus flexible et une manipulation aisée des quantités géométriques dans les jeux vidéo et d'autres applications. 
 
