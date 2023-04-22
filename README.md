@@ -476,9 +476,10 @@ L'équation mathématique de ce cercle est $(x - 2)^2 + (y - 2)^2 = 9$.
 
 Pour représenter ce cercle dans une image vectorielle, on peut utiliser une équation paramétrique qui décrit chaque point $(x, y)$ de la forme :
 ```math
-$x = 2 + 3 \cos \theta$
-
-$y = 2 + 3 \sin \theta$
+x = 2 + 3 \cos \theta
+```
+```math
+y = 2 + 3 \sin \theta
 ```
 > $\cos$ et $\sin$ de theta, sont utilisés ici dans le cas du cercle,  pour obtenir la valeur x et y correspondant à chaque angle $\theta$ (theta) donné.
 
