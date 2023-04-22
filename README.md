@@ -83,6 +83,7 @@ Que vous soyez un développeur de jeux vidéo expérimenté ou que vous vous lan
 
 Dans cette section, nous explorerons les concepts fondamentaux des mathématiques nécessaires pour la programmation de jeux 3D et les graphiques informatiques. Nous aborderons les coordonnées cartésiennes, les vecteurs, les matrices et les transformations.
 
+___
 ### Coordonnées cartésiennes
 
 Les coordonnées cartésiennes sont un système de coordonnées permettant de représenter les points dans l'espace à l'aide de nombres réels. 
@@ -101,9 +102,12 @@ A --> C(y)
 A --> D(z)
 
 ```
+
+Fondamentales dans le domaine des jeux vidéo, en particulier pour les jeux en 3 dimensons, elles permettent de représenter et de manipuler les positions, les mouvements et les orientations des objets dans l'espace virtuel.
+___
 ### Vecteurs
 
-Les vecteurs sont des entités mathématiques représentant à la fois une magnitude (longueur) et une direction et sont généralement utilisés pour décrire la position, la vitesse, l'accélération et d'autres propriétés dans l'espace 2 ou 3D, dans un espace carthésien (Dans un jeu vidéo, on privilégiera un type particulier de repère cartésien qu'est le repère orthonormé).
+Les vecteurs sont des entités mathématiques représentant à la fois une magnitude (longueur) et une direction et sont généralement utilisés pour décrire la position, la vitesse, l'accélération et d'autres propriétés dans l'espace 2 ou 3D, dans un espace carthésien (dans un jeu vidéo, on privilégiera un type particulier de repère cartésien qu'est le repère orthonormé).
 
 Son format d'écriture usuel s'exprime par 
 ```math
@@ -142,6 +146,10 @@ public class Game : GameEngine
 
 Ici, la classe Game, instancierait une position étant un vecteur de dimension 3, et serait affecté à Player, cette position en x (1.0f), y (2.0f), z (3.0f).
 
+L'avantage d'utiliser des vecteurs, plutôt que des nombres concrets, tient aux propriétés mathématiques associées, qui permettent une représentation plus flexible et une manipulation aisée des quantités géométriques dans les jeux vidéo et d'autres applications. 
+
+En outre,  les opérations vectorielles standard, telles que l'addition, la soustraction et la multiplication par un scalaire, simplifient les calculs et les transformations géométriques requises dans de nombreux scénarios. 
+
 #### Addition et soustraction de vecteurs
 
 Pour additionner ou soustraire deux vecteurs, il faut additionner ou de soustraire les composantes correspondantes de chaque vecteur :
@@ -169,6 +177,7 @@ Le produit vectoriel, également appelé produit extérieur, est une opération 
 
 -   Produit vectoriel : **u** × **v** = (u_y * v_z - u_z * v_y, u_z * v_x - u_x * v_z, u_x * v_y - u_y * v_x)
 
+___
 ### Matrices
 
 Les matrices sont des tableaux rectangulaires de nombres, utilisées pour effectuer des transformations linéaires sur des vecteurs. 
