@@ -139,7 +139,7 @@ La magnitude d'un vecteur en dimension $n$ est donnée par la formule suivante :
 ```
 
 > Le symbole $\sum$ est appelé "somme" en mathématiques. Il indique que l'on doit additionner les termes indiqués. Dans ce cas, on doit additionner les carrés de chaque composante du vecteur $\mathbf{v}$.
-> Pour être plus explicite, e symbole en haut ($n$) indique le nombre total de termes à sommer, et le $i=1$ en dessous de la somme indique la valeur de l'indice de départ de la sommation.   
+> Pour être plus explicite, le symbole en haut ($n$) indique le nombre total de termes à sommer, et le $i=1$ en dessous de la somme indique la valeur de l'indice de départ de la sommation.   
 > Cela signifie que la somme commence par le premier élément de la liste, et que $i$ est incrémenté de 1 à chaque itération de la somme, jusqu'à ce que $i$ atteigne la valeur de $n$.
 >
 > Le symbole $\left\Vert\mathbf{v}\right\Vert$ représente la magnitude (ou norme) du vecteur $\mathbf{v}$, c'est-à-dire sa longueur ou sa taille.
