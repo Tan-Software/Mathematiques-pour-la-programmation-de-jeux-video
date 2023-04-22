@@ -67,7 +67,7 @@
 
 ## Introduction
 
-> **Avant toute chose**, si vous n'êtes pas familiarisé avec les formules ou notions mathématiques avancées présentées ici, nous vous conseillons d'aller consacrer le temps nécessaire pour monter en compétences dans le domaine des mathématiques et de la physique, sur le site [Khan Academy](https://fr.khanacademy.org/).
+> **Avant toute chose**, si vous n'êtes pas familiarisé avec les formules ou notions mathématiques présentées ici, nous vous conseillons d'aller consacrer le temps nécessaire pour monter en compétences dans le domaine des mathématiques et de la physique, sur le site [Khan Academy](https://fr.khanacademy.org/).
 
 Ce dépôt est conçu pour vous fournir une compréhension approfondie des concepts mathématiques et des techniques utilisées dans la programmation de jeux 3D et les graphiques informatiques.
 
