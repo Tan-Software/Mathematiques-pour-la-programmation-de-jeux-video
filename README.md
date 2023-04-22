@@ -247,11 +247,7 @@ La rotation en 3D est une transformation qui fait tourner un objet autour d'un p
 \begin{pmatrix} r_{11} & r_{12} & r_{13} & 0 \\ r_{21} & r_{22} & r_{23} & 0 \\ r_{31} & r_{32} & r_{33} & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
 ```
 
-où 
-```math
-r_{11}, r_{12}, r_{13}, r_{21}, r_{22}, r_{23}, r_{31}, r_{32} et r_{33}
-```
-sont les coefficients de la matrice de rotation. 
+où $r_{11}, r_{12}, r_{13}, r_{21}, r_{22}, r_{23}, r_{31}, r_{32}$ et $r_{33}$ sont les coefficients de la matrice de rotation. 
 
 Ces coefficients peuvent être calculés à partir des angles de rotation autour de chacun des axes X, Y et Z, ou à partir d'un vecteur d'axe de rotation et d'un angle de rotation.
 
