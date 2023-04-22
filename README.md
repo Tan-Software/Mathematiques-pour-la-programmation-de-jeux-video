@@ -131,6 +131,29 @@ où chaque **v_i** est un **composant** du vecteur **V** (tel que v_1 est le pre
 > 
 > Les composants d'un vecteur permettent de décrire sa position ou sa direction dans un espace à n dimensions, où n est le nombre de composants du vecteur.
 
+#### Magnitude
+La magnitude d'un vecteur en dimension $n$ est donnée par la formule suivante :
+
+```math
+\left\Vert\mathbf{v}\right\Vert = \sqrt{\sum_{i=1}^{n} v_i^2}
+```
+
+> Le symbole $\sum$ est appelé "somme" en mathématiques. Il indique que l'on doit additionner les termes indiqués. Dans ce cas, on doit additionner les carrés de chaque composante du vecteur $\mathbf{v}$.
+> Pour être plus explicite, le symbole du haut (le *n*), représente le nombre total de termes à sommer, et le *i=1* en dessous de la somme indique la valeur de l'indice de départ de la sommation.
+> Dit autrement, la somme commence par le premier élément de la liste. Le i=i+1 indique que l'on ajoute un à l'indice à chaque itération de la somme.
+>
+> Le symbole $\left\Vert\mathbf{v}\right\Vert$ représente la magnitude (ou norme) du vecteur $\mathbf{v}$, c'est-à-dire sa longueur ou sa taille.
+>
+> Les indices $i$ de la somme indiquent qu'on somme les carrés des composantes de $\mathbf{v}$ de $i=1$ jusqu'à $i=n$, où $n$ est la dimension du vecteur $\mathbf{v}$. > Cela signifie qu'on calcule le carré de la première composante, puis le carré de la deuxième composante, et ainsi de suite jusqu'à la $n$-ème composante.
+>
+> Le symbole $v_i$ représente la $i$-ème composante du vecteur $\mathbf{v}$. On élève cette composante au carré en utilisant le symbole $^2$.
+>
+> Enfin, la racine carrée $\sqrt{\ }$ est appliquée à la somme des carrés des composantes pour obtenir la magnitude du vecteur $\mathbf{v}$.
+
+Pour un vecteur 2D représenté par les coordonnées $(x,y)$, la magnitude est donnée par :
+
+$|v| = \sqrt{x^2 + y^2}$
+
 #### Une représentation possible en C# serait la suivante
 ```C#
 using TansoftwareEngine;
