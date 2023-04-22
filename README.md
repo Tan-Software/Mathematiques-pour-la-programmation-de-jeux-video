@@ -103,9 +103,7 @@ A --> D(z)
 ```
 ### Vecteurs
 
-Les vecteurs sont des entités mathématiques représentant à la fois une magnitude (longueur) et une direction et sont généralement utilisés pour décrire la position, la vitesse, l'accélération et d'autres propriétés dans l'espace 2 ou 3D.
-
-Les opérations courantes sur les vecteurs incluent l'addition, la soustraction, la multiplication par un scalaire, le produit scalaire et le produit vectoriel.
+Les vecteurs sont des entités mathématiques représentant à la fois une magnitude (longueur) et une direction et sont généralement utilisés pour décrire la position, la vitesse, l'accélération et d'autres propriétés dans l'espace 2 ou 3D, dans un espace carthésien (Dans un jeu vidéo, on privilégiera un type particulier de repère cartésien qu'est le repère orthonormé).
 
 Son format d'écriture usuel s'exprime par 
 ```math
@@ -118,39 +116,31 @@ v_n
 \end{pmatrix}
 ```
 
-où chaque v_i est un **composant** du vecteur V (tel que v_1 est le premier composant, v_2 est le deuxième composant, et ainsi de suite), et la matrice représente un vecteur avec n composants, disposés verticalement en une seule colonne.
+où chaque **v_i** est un **composant** du vecteur **V** (tel que v_1 est le premier composant, v_2 est le deuxième composant, et ainsi de suite), et la matrice représente un vecteur avec n composants, disposés verticalement en une seule colonne.
 
 > Dans le contexte des vecteurs, un composant est un élément constitutif du vecteur qui indique sa valeur le long d'un axe particulier. Un vecteur est défini par un ensemble de composants, qui ensemble déterminent sa direction et sa magnitude.
+>
 > Par exemple, un vecteur à deux dimensions a donc deux composants (v_1 et v_2) qui représentent respectivement sa valeur le long des axes x et y. De même, un vecteur à trois dimensions a trois composants (v_1, v_2 et v_3), qui correspondent à sa valeur le long des axes x, y et z.
+> 
 > Les composants d'un vecteur permettent de décrire sa position ou sa direction dans un espace à n dimensions, où n est le nombre de composants du vecteur.
 
----
-
-Une représentation possible en C# serait la suivante :
+#### Une représentation possible en C# serait la suivante
 ```C#
-using UnityEngine;
+using TansoftwareEngine;
 
-public class Example : MonoBehaviour
+public class Game : GameEngine
 {
     void Start()
     {
-        // Créer un nouveau vecteur 3D avec les composants (x, y, z)
-        Vector3 myVector = new Vector3(1.0f, 2.0f, 3.0f);
+        Vector3 position = new Vector3(1.0f, 2.0f, 3.0f);
+	Player myPlayer = new Player();
 
-        // Accéder aux composants individuels du vecteur
-        float x = myVector.x;
-        float y = myVector.y;
-        float z = myVector.z;
-
-        // Exemple d'opération sur les vecteurs : addition
-        Vector3 anotherVector = new Vector3(4.0f, 5.0f, 6.0f);
-        Vector3 resultVector = myVector + anotherVector;
+        myPlayer.setPosition(position);
     }
 }
-
-Enfin, les opérations courantes sur les vecteurs incluent l'addition, la soustraction, la multiplication par un scalaire, le produit scalaire et le produit vectoriel.
-
 ```
+
+Ici, la classe Game, instancierait une position étant un vecteur de dimension 3, et serait affecté à Player, cette position en x (1.0f), y (2.0f), z (3.0f).
 
 #### Addition et soustraction de vecteurs
 
