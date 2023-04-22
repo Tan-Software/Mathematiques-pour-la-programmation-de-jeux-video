@@ -92,8 +92,9 @@ Les coordonnées cartésiennes sont un système de coordonnées permettant de re
 <img align="center" src="https://2.bp.blogspot.com/-E6UXjmd-37Q/WlEur3M7wtI/AAAAAAAALyQ/KDwmVBLf7CE_VQbHJ3gx-LHjf6aymu6OwCLcBGAs/s640/ob_83e7ec_ensembles.png">
 
 
-Dans un espace à deux dimensions (2D), un point est représenté par une paire de coordonnées (x, y).
-Dans un espace à trois dimensions (3D), un point est représenté par un triplet de coordonnées (x, y, z).
+En 2D, l'espace cartésien est un plan composé d'un axe horizontal (l'axe des abscisses) et d'un axe vertical (l'axe des ordonnées). Les coordonnées d'un point dans ce plan sont généralement notées (x, y), où x est l'abscisse et y est l'ordonnée.
+
+En 3D, l'espace cartésien est un espace à trois dimensions composé d'un axe horizontal (l'axe des x), d'un axe vertical (l'axe des y) et d'un axe perpendiculaire à ces deux axes (l'axe des z). Les coordonnées d'un point dans cet espace sont généralement notées (x, y, z).
 
 ```mermaid
 graph LR
@@ -102,6 +103,8 @@ A --> C(y)
 A --> D(z)
 
 ```
+
+Ainsi, l'espace cartésien est défini par un système de coordonnées cartésiennes, qui utilise des axes orthogonaux (des droites perpendiculaires les unes aux autres) et des nombres réels pour définir la position de points dans l'espace.
 
 Fondamentales dans le domaine des jeux vidéo, en particulier pour les jeux en 3 dimensions, elles permettent de représenter et de manipuler les positions, les mouvements et les orientations des objets dans l'espace virtuel.
 ___
