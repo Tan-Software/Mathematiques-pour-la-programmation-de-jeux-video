@@ -147,7 +147,7 @@ La magnitude d'un vecteur en dimension $n$ est donnée par la formule suivante :
 > Le symbole $v_i$ représente la $i$-ème composante du vecteur $\mathbf{v}$. On élève cette composante au carré en utilisant le symbole $^2$.
 >
 > Enfin, la racine carrée $\sqrt{\ }$ est appliquée à la somme des carrés des composantes pour obtenir la magnitude du vecteur $\mathbf{v}$.
-> $\sqrt{}" permettant d'annuler l'opération de carré qui a été appliquée aux composantes du vecteur. 
+> $\sqrt{}$ permettant d'annuler l'opération de carré qui a été appliquée aux composantes du vecteur. 
 > L'opération de carré permet de supprimer les signes négatifs des valeurs absolues des composantes et de rendre toutes les valeurs positives, tout en gardant leur contribution proportionnelle à leur magnitude
 
 Pour un vecteur 2D représenté par les coordonnées $(x,y)$, la magnitude est donnée par :
