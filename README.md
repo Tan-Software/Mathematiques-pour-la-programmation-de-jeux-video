@@ -110,7 +110,9 @@ ___
 ### Vecteurs
 
 Les vecteurs sont des entités mathématiques représentant à la fois une magnitude (longueur) et une direction et sont généralement utilisés pour décrire la position, la vitesse, l'accélération et d'autres propriétés dans l'espace 2 ou 3D, dans un espace carthésien.
-> dans un jeu vidéo, on privilégiera un type particulier de repère cartésien qu'est le repère orthonormé.
+
+> Dans un jeu vidéo, on privilégiera un type particulier de repère cartésien qu'est le repère orthonormé.
+
 ![image](https://user-images.githubusercontent.com/22911157/233814039-82e7aa63-d3dc-498f-ab2c-e19d3385eadf.png)
 
 Son format d'écriture usuel s'exprime par 
