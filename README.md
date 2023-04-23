@@ -109,8 +109,8 @@ Fondamentales dans le domaine des jeux vidéo, en particulier pour les jeux en 3
 ___
 ### Vecteurs
 
-Les vecteurs sont des entités mathématiques représentant à la fois une magnitude (longueur) et une direction et sont généralement utilisés pour décrire la position, la vitesse, l'accélération et d'autres propriétés dans l'espace 2 ou 3D, dans un espace carthésien (dans un jeu vidéo, on privilégiera un type particulier de repère cartésien qu'est le repère orthonormé).
-
+Les vecteurs sont des entités mathématiques représentant à la fois une magnitude (longueur) et une direction et sont généralement utilisés pour décrire la position, la vitesse, l'accélération et d'autres propriétés dans l'espace 2 ou 3D, dans un espace carthésien.
+> dans un jeu vidéo, on privilégiera un type particulier de repère cartésien qu'est le repère orthonormé.
 ![image](https://user-images.githubusercontent.com/22911157/233814039-82e7aa63-d3dc-498f-ab2c-e19d3385eadf.png)
 
 Son format d'écriture usuel s'exprime par 
@@ -131,6 +131,8 @@ où chaque **v_i** est un **composant** du vecteur **V** (tel que v_1 est le pre
 > Par exemple, un vecteur à deux dimensions a donc deux composants (v_1 et v_2) qui représentent respectivement sa valeur le long des axes x et y. De même, un vecteur à trois dimensions a trois composants (v_1, v_2 et v_3), qui correspondent à sa valeur le long des axes x, y et z.
 > 
 > Les composants d'un vecteur permettent de décrire sa position ou sa direction dans un espace à n dimensions, où n est le nombre de composants du vecteur.
+
+![image](https://user-images.githubusercontent.com/22911157/233814114-59fac9fb-8ac5-421d-8a8a-256f591eef26.png)
 
 #### Magnitude
 La magnitude d'un vecteur en dimension $n$ est donnée par la formule suivante :
