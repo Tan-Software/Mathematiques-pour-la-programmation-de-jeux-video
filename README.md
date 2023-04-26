@@ -65,6 +65,7 @@
     - [Shaders](#shaders)
       - [Vertex Shaders](#vertex-shaders)
       - [Geometry Shaders](#geometry-shaders)
+      - [Fragmen Shaders)(#fragment-shaders)
 
 ## Introduction
 
@@ -1060,6 +1061,62 @@ Comme $\vec{u}$ et $\vec{v}$ sont orthogonaux à $\vec{AB}$, cette équation est
 Nous avons généré les triangles en connectant chaque paire de points consécutifs $C_i$, $C_{i+1}$, $D_i$ et $D_{i+1}$. Comme les points sont générés en suivant un cercle autour de chaque extrémité, cela garantit que les triangles forment un tube continu autour de la ligne $AB$. Le cas où $i = N-1$ permet de fermer le tube en connectant les points initiaux et finaux.
 
 En conclusion, l'extrusion décrite forme un tube de rayon $r$ autour de la ligne $AB$, et les triangles générés décrivent un tube continu.
+
+### Fragment Shaders
+Les fragment shaders permettent de déterminer la couleur finale de chaque pixel à afficher à l'écran, en prenant en compte les propriétés des matériaux, l'éclairage, les textures, et d'autres facteurs.
+
+#### 1. Interpolation des attributs de sommet
+Lorsque les sommets sont transformés par le vertex shader, ils sont accompagnés d'attributs tels que les coordonnées de texture, les normales et les couleurs. Ces attributs sont ensuite interpolés pour chaque fragment à l'intérieur du triangle,
+
+Soit $A$, $B$ et $C$ les sommets du triangle avec leurs attributs respectifs $A_a$, $B_a$ et $C_a$. Pour un fragment $F$ à l'intérieur du triangle, les attributs interpolés $F_a$ sont déterminés en utilisant les coordonnées barycentriques $\alpha$, $\beta$ et $\gamma$ :
+```math
+F_a = \alpha A_a + \beta B_a + \gamma C_a
+```
+avec $\alpha + \beta + \gamma = 1$ et $0 \leq \alpha, \beta, \gamma \leq 1$.
+
+#### 2. Calcul de l'éclairage
+Le fragment shader doit également prendre en compte l'éclairage de la scène pour déterminer la couleur finale du fragment. 
+Soit $L$ la direction de la source de lumière, $N$ la normale au fragment et $V$ la direction de la caméra. 
+La couleur finale $C_f$ est déterminée en utilisant l'équation de Phong, qui est une combinaison de la composante ambiante, diffuse et spéculaire :
+```math
+C_f = k_a I_a + k_d (N \cdot L) I_d + k_s (R \cdot V)^n I_s
+```
+où $k_a$, $k_d$ et $k_s$ sont les coefficients d'éclairage ambiant, diffus et spéculaire, $I_a$, $I_d$ et $I_s$ sont les intensités de lumière ambiante, diffuse et spéculaire, $R$ est la direction de réflexion de la lumière et $n$ est l'exposant de brillance.
+
+#### 3. Application des textures
+Les fragment shaders peuvent également utiliser des textures pour déterminer la couleur finale du fragment. Soit $T(u, v)$ la couleur de la texture aux coordonnées de texture $(u, v)$. La couleur finale $C_t$ du fragment est alors déterminée en modulant la couleur interpolée $F_a$ avec la couleur de la texture :
+
+```math
+C_t = F_a \odot T(u, v)
+```
+où $\odot$ représente le produit terme à terme (ou la modulation) des composantes de couleur.
+
+#### 4. Combinaison des couleurs
+Finalement, la couleur finale du fragment est déterminée en combinant les couleurs calculées à partir de l'éclairage et des textures :
+
+```math
+C_{final} = C_f \odot C_t
+```
+Cette couleur finale $C_{final}$ est ensuite utilisée pour déterminer la couleur du pixel à afficher à l'écran.
+
+#### 5. Transparence
+Les fragment shaders peuvent également gérer la transparence des objets. Pour cela, ils utilisent une valeur alpha pour chaque fragment, qui détermine l'opacité de ce fragment. La couleur finale $C_f$ du fragment est alors combinée avec la couleur du fond $C_b$ en utilisant la valeur alpha $a$ pour obtenir la couleur du pixel à afficher :
+
+```math
+C_{pixel} = C_f \odot a + C_b \odot (1 - a)
+```
+où $\odot$ représente le produit terme à terme (ou la modulation) des composantes de couleur.
+
+#### 6. Effets spéciaux
+Les fragment shaders peuvent être utilisés pour créer des effets spéciaux, tels que des ombres, des reflets, des flous ou des effets de distorsion. Pour cela, il est souvent nécessaire de modifier la couleur finale du fragment de manière spécifique. Par exemple, pour créer une ombre, la couleur finale du fragment peut être multipliée par un facteur d'ombre qui réduit l'intensité de la couleur. Pour créer un effet de flou, la couleur finale peut être calculée en moyennant les couleurs des fragments environnants.
+
+Ces opérations peuvent être décrites mathématiquement en utilisant des fonctions d'interpolation et des filtres. Par exemple, pour créer un flou gaussien, la couleur finale $C_f$ peut être calculée en utilisant une somme pondérée de la couleur des fragments environnants :
+
+```math
+C_f(x,y)= \frac{1}{2\pi\sigma^2} \sum_{i=-k}^k \sum_{j=-k}^k w(i,j)C(x+i,y+j)
+```
+où $\sigma$ est l'écart-type de la distribution gaussienne, $k$ est la taille du filtre et $w(i,j)$ est la pondération de chaque fragment voisin $(i,j)$. 
+Cette formule peut être implémentée efficacement dans un fragment shader pour créer un effet de flou.
 
 [🔝 Retour en haut de page](#table-des-matières)
 
