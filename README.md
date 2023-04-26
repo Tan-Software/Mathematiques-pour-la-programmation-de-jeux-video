@@ -1114,13 +1114,20 @@ où $\odot$ représente le produit terme à terme (ou la modulation) des composa
 #### 6. Effets spéciaux
 Les fragment shaders peuvent être utilisés pour créer des effets spéciaux, tels que des ombres, des reflets, des flous ou des effets de distorsion. Pour cela, il est souvent nécessaire de modifier la couleur finale du fragment de manière spécifique. Par exemple, pour créer une ombre, la couleur finale du fragment peut être multipliée par un facteur d'ombre qui réduit l'intensité de la couleur. Pour créer un effet de flou, la couleur finale peut être calculée en moyennant les couleurs des fragments environnants.
 
-Ces opérations peuvent être décrites mathématiquement en utilisant des fonctions d'interpolation et des filtres. Par exemple, pour créer un flou gaussien, la couleur finale $C_f$ peut être calculée en utilisant une somme pondérée de la couleur des fragments environnants :
+Ces opérations peuvent être décrites mathématiquement en utilisant des fonctions d'interpolation et des filtres. 
+
+#### Flou gaussien
+La couleur finale $C_f$ peut être calculée en utilisant une somme pondérée de la couleur des fragments environnants :
+> Une somme pondérée est une somme dans laquelle chaque terme est multiplié par un poids spécifique.
+
+> Un poids spécifique est une mesure de la masse volumique d'une substance (la masse par unité de volume). Dit autrement,  la quantité de matière contenue dans un volume donné de la substance considérée.
+
+> Enfin, les couleurs sont représentées par des valeurs numériques qui peuvent être considérées comme des "substances" numériques.
 
 ```math
 C_f(x,y)= \frac{1}{2\pi\sigma^2} \sum_{i=-k}^k \sum_{j=-k}^k w(i,j)C(x+i,y+j)
 ```
 où $\sigma$ est l'écart-type de la distribution gaussienne, $k$ est la taille du filtre et $w(i,j)$ est la pondération de chaque fragment voisin $(i,j)$. 
-Cette formule peut être implémentée efficacement dans un fragment shader pour créer un effet de flou.
 
 #### 7. Optimisations
 
