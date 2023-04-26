@@ -65,7 +65,7 @@
     - [Shaders](#shaders)
       - [Vertex Shaders](#vertex-shaders)
       - [Geometry Shaders](#geometry-shaders)
-      - [Fragmen Shaders)(#fragment-shaders)
+      - [Fragmen Shaders](#fragment-shaders)
 
 ## Introduction
 
@@ -1117,6 +1117,14 @@ C_f(x,y)= \frac{1}{2\pi\sigma^2} \sum_{i=-k}^k \sum_{j=-k}^k w(i,j)C(x+i,y+j)
 ```
 où $\sigma$ est l'écart-type de la distribution gaussienne, $k$ est la taille du filtre et $w(i,j)$ est la pondération de chaque fragment voisin $(i,j)$. 
 Cette formule peut être implémentée efficacement dans un fragment shader pour créer un effet de flou.
+
+#### 7. Optimisations
+
+- Culling : Le culling est une technique qui consiste à éviter le rendu de fragments qui ne sont pas visibles à l'écran. Par exemple, si un objet est entièrement masqué par un autre objet, on évitera de le rendre afin préserver la charge de calcul pour le GPU et améliorer les performances globales.
+
+- Discarding : Le discarding est une technique similaire au culling, mais elle s'applique aux fragments qui ne sont pas nécessaires pour l'image finale. Par exemple, si un objet est partiellement masqué par un autre objet, seuls les fragments visibles doivent être rendus. Les fragments masqués peuvent être supprimés (ou "jetés"), réduisant la charge de calcul pour le GPU et améliorant les performances globales.
+
+- Simplification de la géométrie : La simplification de la géométrie est une technique qui consiste à réduire le nombre de triangles nécessaires pour représenter un objet. Par exemple, si un objet est suffisamment éloigné de la caméra, il peut être représenté par un nombre réduit de triangles sans affecter de manière significative la qualité de l'image.
 
 [🔝 Retour en haut de page](#table-des-matières)
 
