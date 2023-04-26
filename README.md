@@ -1065,6 +1065,10 @@ En conclusion, l'extrusion décrite forme un tube de rayon $r$ autour de la lign
 ### Fragment Shaders
 Les fragment shaders permettent de déterminer la couleur finale de chaque pixel à afficher à l'écran, en prenant en compte les propriétés des matériaux, l'éclairage, les textures, et d'autres facteurs.
 
+> Les fragments sont créés par le processus de [rasterization](https://github.com/tanguychenier/Terminal_3DEngine), qui consiste à convertir la géométrie en pixels afin qu'à l'écran, chaque pixel de l'image soit découpé en "fragments" qui sont ensuite traités par le "fragment shader" pour déterminer la couleur finale de ce pixel.
+>
+> Cet algorithme est donc chargé de calculer la couleur de chaque fragment en fonction des propriétés des matériaux, de l'éclairage, des textures et d'autres facteurs, avant que ces fragments ne soient finalement combinés pour créer l'image finale.
+
 #### 1. Interpolation des attributs de sommet
 Lorsque les sommets sont transformés par le vertex shader, ils sont accompagnés d'attributs tels que les coordonnées de texture, les normales et les couleurs. Ces attributs sont ensuite interpolés pour chaque fragment à l'intérieur du triangle,
 
