@@ -61,9 +61,10 @@
     - [Intelligence artificielle avancée](#intelligence-artificielle-avancée)
     - [Rendu avancé](#rendu-avancé)
 11. [Pipeline de rendu](#pipeline-de-rendu)
-	- [Culling et occlusion](#culling-et-occlusion)
-	- [Shaders](#shaders)
-
+    - [Culling et occlusion](#culling-et-occlusion)
+    - [Shaders](#shaders)
+      - [Vertex Shaders](#vertex-shaders)
+      - [Geometry Shaders](#geometry-shaders)
 
 ## Introduction
 
@@ -998,6 +999,67 @@ C --> D(Texture de sortie)
 ```
 
 Bien que les détails de ces opérations dépendent du langage de programmation utilisé pour écrire les shaders, tel que GLSL ou HLSL, ils peuvent également effectuer d'autres opérations sur les sommets, telles que l'application de textures, la génération de coordonnées de texture, ou l'envoi de données supplémentaires aux shaders de géométrie et de fragment.
+
+### Geometry Shaders
+Etape de traitement intermédiaire entre les vertex shaders et les fragment shaders dans le pipeline de rendu graphique, les shaders de géométrie offrent la possibilité de générer de nouveaux éléments graphiques, tels que des points, des lignes ou des triangles, à partir des primitives d'entrée. 
+
+Cette étape est facultative et peut être utilisée pour réaliser des effets complexes tels que le déplacement de sommets, la génération de géométrie procédurale ou la création d'ombres volumétriques.
+
+> Un cas concret pourrait être par exemple, la modélisation procédurale pour générer ou modifier la géométrie d'un personnage en temps réel (en créant des détails supplémentaires ou en modifiant la forme du personnage selon certaines conditions du jeu, ...).
+
+#### Fonctionnement
+Considérons un exemple simple pour illustrer le fonctionnement des geometry shaders. 
+Soit une ligne définie par deux points $A$ et $B$. 
+Nous souhaitons extruder cette ligne pour former un tube de rayon $r$. Le geometry shader va générer un ensemble de triangles formant le tube.
+
+Soit $\vec{AB} = \vec{B} - \vec{A}$. Nous commençons par calculer un vecteur $\vec{u}$ orthogonal à $\vec{AB}$ :
+```math
+\vec{u} = \begin{cases}
+(\vec{AB}_y, -\vec{AB}_x, 0) & \text{si } \vec{AB}_z = 0 \\
+(-\vec{AB}_z, 0, \vec{AB}_x) & \text{sinon}
+\end{cases}
+```
+
+Ensuite, nous calculons un vecteur $\vec{v}$ orthogonal à $\vec{AB}$ et $\vec{u}$ en utilisant le produit vectoriel :
+```math
+\vec{v} = \vec{AB} \times \vec{u}
+```
+
+Nous normalisons les vecteurs $\vec{u}$ et $\vec{v}$ :
+```math
+\hat{u} = \frac{\vec{u}}{|\vec{u}|}, \hat{v} = \frac{\vec{v}}{|\vec{v}|}
+```
+Soit $N$ le nombre de segments pour approximer le cercle du tube. Nous générons $N$ points $C_i$ et $D_i$ autour de chaque extrémité $A$ et $B$ :
+```math
+C_i = \vec{A} + r \cos \frac{2 \pi i}{N} \vec{u} + r \sin \frac{2 \pi i}{N} \vec{v}, \quad i = 0, 1, \dots, N-1
+```
+```math
+D_i = \vec{B} + r \cos \frac{2 \pi i}{N} \vec{u} + r \sin \frac{2 \pi i}{N} \vec{v}, \quad i = 0, 1, \dots, N-1
+```
+
+Maintenant que nous avons les points autour de chaque extrémité, nous générons les triangles formant le tube. Pour chaque paire de points consécutifs $C_i$, $C_{i+1}$, $D_i$ et $D_{i+1}$, nous formons deux triangles : $(C_i, D_i, C_{i+1})$ et $(C_{i+1}, D_i, D_{i+1})$. Nous devons également traiter le cas où $i = N-1$ pour fermer le tube en connectant les points $C_0$, $C_{N-1}$, $D_0$ et $D_{N-1}$.
+
+#### Démonstration
+Pour démontrer que l'extrusion décrite précédemment forme un tube autour de la ligne $AB$, nous devons montrer que chaque point $C_i$ et $D_i$ se trouve à une distance $r$ de la ligne et que les triangles générés décrivent un tube continu.
+1. La distance entre chaque point $C_i$ et la ligne $AB$ :
+Soit $M_i$ le point de la ligne $AB$ le plus proche de $C_i$. Le vecteur $\vec{MC_i}$ est orthogonal à $\vec{AB}$, donc leur produit scalaire est nul :
+```math
+\vec{AB} \cdot \vec{MC_i} = 0
+```
+
+En utilisant la définition des points $C_i$ :
+```math
+\vec{AB} \cdot (\vec{A} + r \cos \frac{2 \pi i}{N} \vec{u} + r \sin \frac{2 \pi i}{N} \vec{v} - \vec{A}) = 0
+```
+```math
+\vec{AB} \cdot (r \cos \frac{2 \pi i}{N} \vec{u} + r \sin \frac{2 \pi i}{N} \vec{v}) = 0
+```
+Comme $\vec{u}$ et $\vec{v}$ sont orthogonaux à $\vec{AB}$, cette équation est vérifiée. La distance entre $C_i$ et $AB$ est donc $r$.
+
+2. La continuité du tube :
+Nous avons généré les triangles en connectant chaque paire de points consécutifs $C_i$, $C_{i+1}$, $D_i$ et $D_{i+1}$. Comme les points sont générés en suivant un cercle autour de chaque extrémité, cela garantit que les triangles forment un tube continu autour de la ligne $AB$. Le cas où $i = N-1$ permet de fermer le tube en connectant les points initiaux et finaux.
+
+En conclusion, l'extrusion décrite forme un tube de rayon $r$ autour de la ligne $AB$, et les triangles générés décrivent un tube continu.
 
 [🔝 Retour en haut de page](#table-des-matières)
 
