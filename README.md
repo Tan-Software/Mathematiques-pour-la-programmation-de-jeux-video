@@ -182,7 +182,7 @@ public class Game : GameEngine
 }
 ```
 
-> Ici, la classe Game instancierait une position qui serait un vecteur de dimension 3 et serait affectée au joueur, avec une position en x (1.0f), y (2.0f), z (3.0f).
+> Ici, la classe Game instancierait une position qui serait un vecteur de dimension 3 et serait affectée au joueur, avec une position en x (1.0f) correspondant à l'abscisse (horizontal), y (2.0f) correspondant à l'ordonnée (vertical), z (3.0f) correspondant à la profondeur de champ (distance par rapport à une caméra).
 
 La magnitude serait donc
 ```math
