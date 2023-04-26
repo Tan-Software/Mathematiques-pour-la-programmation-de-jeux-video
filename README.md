@@ -65,7 +65,7 @@
     - [Shaders](#shaders)
       - [Vertex Shaders](#vertex-shaders)
       - [Geometry Shaders](#geometry-shaders)
-      - [Fragmen Shaders](#fragment-shaders)
+      - [Fragment Shaders](#fragment-shaders)
 
 ## Introduction
 
