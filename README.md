@@ -93,7 +93,7 @@ Les coordonnées cartésiennes sont un système de coordonnées permettant de re
 > Les nombres **réels** sont une extension des nombres rationnels qui permettent de représenter toutes les grandeurs physiques, y compris les nombres irrationnels tels que $\pi$ et $\sqrt{2}$.  <br>
 <img align="center" src="https://2.bp.blogspot.com/-E6UXjmd-37Q/WlEur3M7wtI/AAAAAAAALyQ/KDwmVBLf7CE_VQbHJ3gx-LHjf6aymu6OwCLcBGAs/s640/ob_83e7ec_ensembles.png">
 
-En 2D, l'espace cartésien est un plan composé d'un axe horizontal (l'axe des abscisses) et d'un axe vertical (l'axe des ordonnées). Les coordonnées d'un point dans ce plan sont généralement notées (x, y), où x est l'abscisse et y est l'ordonnée.
+En 2D, l'espace cartésien est un plan composé d'un axe horizontal et d'un axe vertical. Les coordonnées d'un point dans ce plan sont généralement notées (x, y), où x est l'abscisse (horizontal) et y est l'ordonnée (vertical).
 
 En 3D, l'espace cartésien est un espace à trois dimensions composé d'un axe horizontal (l'axe des x), d'un axe vertical (l'axe des y) et d'un axe perpendiculaire à ces deux axes (l'axe des z). Les coordonnées d'un point dans cet espace sont généralement notées (x, y, z).
 
